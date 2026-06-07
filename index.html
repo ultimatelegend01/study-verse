@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Verse</title>
+
+<style>
+:root{
+--primary:#2563eb;
+--secondary:#10b981;
+--dark:#1f2937;
+--light:#f3f4f6;
+--accent:#f59e0b;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#f5f7fb;
+}
+
+header{
+background:var(--primary);
+color:white;
+padding:20px;
+text-align:center;
+}
+
+header h1{
+font-size:2.2rem;
+}
+
+nav{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+padding:15px;
+background:white;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav button{
+padding:10px 15px;
+border:none;
+background:var(--primary);
+color:white;
+border-radius:6px;
+cursor:pointer;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+margin-bottom:20px;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+input,select,textarea{
+width:100%;
+padding:12px;
+margin-top:8px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:6px;
+}
+
+.btn{
+background:var(--secondary);
+color:white;
+padding:12px;
+border:none;
+width:100%;
+border-radius:6px;
+cursor:pointer;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:15px;
+}
+
+.subject{
+background:#eef4ff;
+padding:20px;
+border-radius:10px;
+text-align:center;
+font-weight:bold;
+cursor:pointer;
+}
+
+.subject:hover{
+background:#dbeafe;
+}
+
+.notice{
+background:#fff7cc;
+padding:15px;
+border-left:5px solid orange;
+border-radius:6px;
+}
+
+.section-title{
+margin-bottom:15px;
+color:var(--primary);
+}
+
+.test-box{
+padding:15px;
+background:#f8fafc;
+border-radius:8px;
+margin-bottom:10px;
+}
+
+.game{
+background:#ecfdf5;
+padding:15px;
+border-radius:10px;
+text-align:center;
+font-weight:bold;
+}
+
+footer{
+background:var(--dark);
+color:white;
+text-align:center;
+padding:20px;
+margin-top:30px;
+}
+
+.hidden{
+display:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>📚 Study Verse</h1>
+<p>Learn • Practice • Play • Achieve</p>
+</header>
+
+<nav>
+<button onclick="showSection('home')">Home</button>
+<button onclick="showSection('subjects')">Subjects</button>
+<button onclick="showSection('videos')">Videos</button>
+<button onclick="showSection('notes')">Notes</button>
+<button onclick="showSection('tests')">Tests</button>
+<button onclick="showSection('games')">Games</button>
+<button onclick="showSection('updates')">Updates</button>
+</nav>
+
+<div class="container">
+
+<!-- LOGIN -->
+<div class="card" id="home">
+
+<h2 class="section-title">Student Registration / Login</h2>
+
+<label>Full Name</label>
+<input type="text" placeholder="Enter Name">
+
+<label>Email</label>
+<input type="email" placeholder="Enter Email">
+
+<label>Password</label>
+<input type="password" placeholder="Password">
+
+<label>Select Class</label>
+<select>
+<option>Class 1</option>
+<option>Class 2</option>
+<option>Class 3</option>
+<option>Class 4</option>
+<option>Class 5</option>
+<option>Class 6</option>
+<option>Class 7</option>
+<option>Class 8</option>
+<option>Class 9</option>
+<option>Class 10</option>
+<option>Class 11</option>
+<option>Class 12</option>
+</select>
+
+<button class="btn">Register / Login</button>
+
+<br><br>
+
+<button class="btn">Sign in with Google</button>
+
+</div>
+
+<!-- NCERT -->
+<div class="card">
+<h2 class="section-title">NCERT Version</h2>
+
+<select>
+<option>New NCERT</option>
+<option>Old NCERT</option>
+</select>
+</div>
+
+<!-- SUBJECTS -->
+<div class="card hidden" id="subjects">
+
+<h2 class="section-title">Subjects</h2>
+
+<div class="grid">
+
+<div class="subject">Mathematics</div>
+<div class="subject">Science</div>
+<div class="subject">Social Science</div>
+<div class="subject">English</div>
+<div class="subject">Hindi</div>
+<div class="subject">Computer Science</div>
+<div class="subject">Physics</div>
+<div class="subject">Chemistry</div>
+<div class="subject">Biology</div>
+<div class="subject">Economics</div>
+<div class="subject">Business Studies</div>
+<div class="subject">Accountancy</div>
+
+</div>
+
+</div>
+
+<!-- VIDEOS -->
+<div class="card hidden" id="videos">
+
+<h2 class="section-title">Video Lectures</h2>
+
+<div class="test-box">
+Chapter 1 Video Lecture
+</div>
+
+<div class="test-box">
+Chapter 2 Video Lecture
+</div>
+
+<div class="test-box">
+Chapter 3 Video Lecture
+</div>
+
+</div>
+
+<!-- NOTES -->
+<div class="card hidden" id="notes">
+
+<h2 class="section-title">Revision Notes</h2>
+
+<div class="test-box">
+Quick Revision Notes
+</div>
+
+<div class="test-box">
+Important Formulas
+</div>
+
+<div class="test-box">
+Mind Maps
+</div>
+
+</div>
+
+<!-- TESTS -->
+<div class="card hidden" id="tests">
+
+<h2 class="section-title">Practice Tests</h2>
+
+<div class="test-box">
+Chapter Test 1
+</div>
+
+<div class="test-box">
+Chapter Test 2
+</div>
+
+<div class="test-box">
+Full Syllabus Test
+</div>
+
+</div>
+
+<!-- GAMES -->
+<div class="card hidden" id="games">
+
+<h2 class="section-title">Learn While Playing</h2>
+
+<div class="grid">
+
+<div class="game">Math Challenge</div>
+
+<div class="game">Science Quiz</div>
+
+<div class="game">Word Builder</div>
+
+<div class="game">GK Challenge</div>
+
+<div class="game">Memory Match</div>
+
+<div class="game">History Adventure</div>
+
+</div>
+
+</div>
+
+<!-- UPDATES -->
+<div class="card hidden" id="updates">
+
+<h2 class="section-title">Owner Announcements</h2>
+
+<div class="notice">
+🔔 NCERT syllabus updated.
+</div>
+
+<br>
+
+<div class="notice">
+🔔 New practice tests added.
+</div>
+
+<br>
+
+<div class="notice">
+🔔 New educational games available.
+</div>
+
+</div>
+
+<!-- DASHBOARD -->
+<div class="card">
+
+<h2 class="section-title">Student Progress</h2>
+
+<p>Courses Completed: 12%</p>
+
+<br>
+
+<progress value="12" max="100" style="width:100%;"></progress>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 Study Verse | Learn Smarter Every Day
+</footer>
+
+<script>
+
+function showSection(id){
+
+const sections=[
+'home',
+'subjects',
+'videos',
+'notes',
+'tests',
+'games',
+'updates'
+];
+
+sections.forEach(section=>{
+const element=document.getElementById(section);
+
+if(section===id){
+element.classList.remove('hidden');
+}else{
+element.classList.add('hidden');
+}
+});
+
+}
+
+</script>
+
+</body>
+</html>
